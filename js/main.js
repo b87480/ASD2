@@ -1,3 +1,7 @@
+//Joshua Whitney
+//1309
+//ASD Project
+
 $('#view').on('pageinit', function(){
 
 
