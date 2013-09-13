@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<items>
+    <item>
+        <type>Violent</type>
+        <name>Thrasher Zombie</name>
+        <food>Limbs</food>
+        <location>North America</location>
+    </item>
+    <item>
+        <type>Crazy</type>
+        <name>Pyscho Zombie</name>
+        <food>Ears</food>
+        <location>South America</location>
+    </item>
+</items> 
+
