@@ -1,6 +1,7 @@
 //Joshua Whitney
 //1309
 //ASD Project
+//week 2
 
 $('#view').on('pageinit', function(){
 
