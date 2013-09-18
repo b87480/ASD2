@@ -89,6 +89,7 @@ $("#json").on('pageinit', function(){
 			type: "GET",
 			dataType: "json",
 			success: function(data){
+				console.log(data);
 				for(var i=0, x=data.Zombies.length; i<x; i++){
 					var zom = data.Zombies[i];
 					$(''+
@@ -126,41 +127,43 @@ $('#xml').on('pageinit', function(){
             dataType: "xml",
             success: function(xml) {
 
+            	//console.log($(xml).find('item').text());
+            $(xml).find('items').each(function(){
+            		$(this).find('item').each(function(){
+            			var item 		= $(this).text();
+            			var name 		= $(this).find('name').text();
+            			var type 		= $(this).find('type').text();
+             			var location  	= $(this).find('location').text();
+            			var	food 		= $(this).find('food').text();
 
-            	for(var i=0, x=$(xml).find('items').length; i<x; i++){
-					var zom = $(xml).find('items')[i];
-					console.log(zom[i]);
-            /*	$(xml).find('items').each(function(){
-                    var type = $(this).find("type").text()
-                    var name = $(this).find("name").text()
-                    var food = $(this).find("food").text()
-                    var loca = $(this).find("location").text()
-                    console.log(name);*/
-
-                    $(''+
-						'<div class="nzcontent">'+
-							'<h2>'+ zom +'</h2>'+
-							'<p>'+ "Type: "+ zom +'</p>'+
-							'<p>'+ "Favorite Food: " + zom +'</p>'+
-							'<p>'+ "Mainly Found in: "+ zom +'</p>'+
+            			$(''+
+						'<div class="xmlcontent">'+
+							'<h2>'+"Name: "+ name +'</h2>'+
+							'<p>'+ "Type: "+ type +'</p>'+
+							'<p>'+ "Favorite Food: " + food +'</p>'+
+							'<p>'+ "Mainly Found in: "+ location +'</p>'+
 							'</div>'
 					).appendTo('#xcontent');
+            			//console.log(location);
+            		});
+            	//var data = $(xml).find('item').text();
+            	//var name = $(xml).find('name').text();
+            	//console.log("zombie: " + data);
 
-			
-			$('.nzcontent h2').css("color","red");
-			$('.nzcontent').css("text-align","center");
-			var hom = $('<a href="#home" data-role="button">HOME</a>');
-			$(hom).css({"text-decoration":"none",
-						"color":"black",
-						"display":"block",
-						"border":"solid 1px black",
-						"padding":"10px",
-						"text-align":"center",
-						"text-shadow":"none",
-						"background-color":"red",
-						"border-radius":"10px"});
-			$(hom).appendTo('#xcontent');
-                };
+            });
+            	//console.log(data);
+            	//console.log(item);
+            	//var xml = xml.length
+            	//var data = $.parseXML(xml);
+            	//console.log(data);
+
+				// wrap the XML in a jQuery object to make it easier to work with
+			//	var items = $( data );
+			//	items.find("item").each(function(){
+			//	    var item = $(this);
+				   // console.log("Name: ", item.find("name"));
+			//	});
+            	
 
             }
       	});
