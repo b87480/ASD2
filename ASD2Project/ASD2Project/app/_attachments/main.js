@@ -115,7 +115,7 @@ $('.edit').on('click', function(key){
 $("#json").on('pageinit', function(){
 
 		$.ajax({
-			url: "xhr/zombie.json",
+			url: "zombie.json",
 			type: "GET",
 			dataType: "json",
 			success: function(data){
@@ -153,7 +153,7 @@ $('#xml').on('pageinit', function(){
 
 		$.ajax({
             type: "GET",
-            url: "xhr/zombie.xml",
+            url: "zombie.xml",
             dataType: "xml",
             success: function(xml) {
 
