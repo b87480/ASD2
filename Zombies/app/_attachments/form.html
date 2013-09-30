@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<!-- Joshua Whitney, 1309, ASD 2 Project -->
+
+<head>
+<meta charset="utf-8">
+	
+	<title>Zombie Form</title>
+	
+	<!--  Mobile viewport optimized: j.mp/bplateviewport -->
+	<meta name="HandheldFriendly" content="True">
+	<meta name="MobileOptimized" content="320"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<!-- Mobile IE needs ClearType for smoothing fonts -->
+	
+	<meta http-equiv="cleartype" content="on">
+
+<link rel="stylesheet" type="text/css" href="jquery.mobile-1.3.2.min.css">	
+<link rel="stylesheet" type="text/css" href="custom.css">
+
+</head>
+
+<body>
+<div data-role="page" id="newForm">
+<div data-role="header"><h1>FORM</h1></div>
+<div data-role="content">
+
+
+		<form action="#" method="POST" id="myform">	
+
+					<label for="firstname"></label>
+					<input type="text" name="firstname" id="firstname" placeholder="Zombie FirstName" /><br>
+					<label for="lastname"></label>
+					<input type="text" name="lastname" id="lastname" placeholder="Zombie LastName" /><br>
+
+					<label for="switch">HIGH PRIORITY?:</label>
+					<select name="switch" id="switch" data-role="slider">
+					    <option value="off">NO</option>
+					    <option value="on">YES</option>
+					</select>
+
+					<label for="weapon" class="weapons">WEAPONS:</label>
+					<select name="weapon" id="weapon" data-native-menu="false">
+					    <option>PLEASE CHOOSE ONE:</option>
+					    <option value="gun">HANDGUN</option>
+					    <option value="knife">KNIFE</option>
+					    <option value="grenade">GRENADE</option>
+					    <option value="bomb">BOMB</option>
+					</select>
+
+					<label for="ztype" class="ztypes">TYPES OF ZOMBIES:</label>
+					<select name="ztype" id="ztype" multiple="multiple" data-native-menu="false" data-icon="grid" data-iconpos="left">
+					    <option>YOU CAN CHOOSE MORE THAN ONE:</option>
+					    <optgroup label="VIOLENT">
+					        <option value="pureevil" selected="">MAKES THE DEVIL SAD</option>
+					        <option value="bloodthirsty">CHARLES MANSON IS SCARED</option>
+					        <option value="insane">MIGHT EAT IT'S OWN FOOT</option>
+					        <option value="homicidal">KILLS OTHER ZOMBIES FOR SPORT</option>
+					    </optgroup>
+					    <optgroup label="FEEDER">
+					        <option value="supersizeme">SUPER SIZE ME!</option>
+					        <option value="moderate">MIGHT EAT YOUR FACE</option>
+					        <option value="picky">WATCH YOUR TOE NAILS</option>
+					    </optgroup>
+					</select>
+
+					<label for="date">WHEN SHOULD THIS ZOMBIE DIE?:</label>
+					<input name="date" id="date" value="" type="date"></input>
+			
+					<!--<a href="#view" data-role="button" id="button" type="button" value="SUBMIT">SUBMIT</a>-->
+					<input id="button" type="button" value="SUBMIT"></input>
+		</form>
+
+	</div>
+
+
+
+</div>
+
+
+
+
+	<script type="text/javascript" src="jquery-1.10.2.min.js"></script>
+	<script type="text/javascript" src="jquery.mobile-1.3.2.min.js"></script>
+	
+	<script type="text/javascript" src="form.js"></script>
+</body>
+
+
+
+</html>

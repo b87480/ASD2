@@ -56,13 +56,20 @@ $('#loc').on('pageinit', function(){
 			var key 	= localStorage.key(i);
 			var value   = localStorage.getItem(key);
 			var json 	= JSON.parse(value);
+			var del 	= $('<a href="#" data-key="' + key + '">DELETE</a>').appendTo(navLi);
 			for(var n in json){
 				
 				var display = json[n].name+": "+json[n].value;
 				$('<p>'+ display + '</p>').appendTo('#lcontent');
 			}
 		//editButtons(localStorage.key(i), navLi);
-		newButtons(localStorage.key(i), navLi);
+	//	newButtons(localStorage.key(i), navLi);
+		$(del).on('click', function(){
+			//var first = $(this).data(key);
+			var first = $(key).val();
+			//console.log(del);
+			console.log(first);
+		});
 		}
 
 function newButtons(key, navLi){
@@ -75,19 +82,21 @@ function newButtons(key, navLi){
 			newLink.appendTo(navLi);
 
 	//Delete Button
-	var del = $('<a href="#" class="destroy">DELETE</a>');
-			del.css("text-decoration","none");
-			del.key = key;
-			var userDel = $('.destroy');
-			$(userDel).on("click", deleteKey);
-			del.appendTo(navLi);
-			console.log(del.key);
+	//var del = $('<a href="#" class="destroy" data-key="' + key + '">DELETE</a>');
+	//		del.css("text-decoration","none");
+			//del.key = key;
+		//	del.data('key', 'key');
+		//	console.log(del);
+	//		var userDel = $('.destroy');
+	//		$(userDel).on("click", deleteKey);
+	//		del.appendTo(navLi);
+	//		console.log(del);
 
 };
 
 function deleteKey(){
 	
-	console.log($(this).key);
+	console.log();
 	//localStorage.removeItem(this.key);
 	//location.reload();
 };
